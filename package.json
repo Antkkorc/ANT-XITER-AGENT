@@ -1,0 +1,30 @@
+{
+  "name": "ant-xiter-agent",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail --names API,WEB --prefix-colors yellow,cyan \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "node server/dev-api.mjs",
+    "dev:web": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "start": "node server/dev-api.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tesseract.js": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^9.2.0",
+    "typescript": "^5.8.3",
+    "vite": "^7.1.7"
+  }
+}
